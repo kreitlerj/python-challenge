@@ -50,8 +50,7 @@ min_profit = min(profit_loss)
 index_min = profit_loss.index(min_profit)
 min_month = months[index_min]
 
-#Print out analysis
-print(f'''Financial Analysis
+financial_analysis = (f'''Financial Analysis
 ----------------------------------
 Total Months: {total_months}
 Total: ${net_amount:.2f}
@@ -59,15 +58,12 @@ Average Change: {avg_change:.2f}
 Greatest Increase in Profits: {max_month} {max_profit:.2f}
 Greatest Decrease in Profits: {min_month} {min_profit:.2f}''')
 
+#Print out analysis
+print(financial_analysis)
+
 #Create a .txt file containing the same analysis in the print out
 analysis = open('financial_analysis.txt', 'w')
 
-analysis.write('Financial Analysis\n')
-analysis.write('----------------------------------\n')
-analysis.write(f'Total Months: {total_months}\n')
-analysis.write(f'Total: ${net_amount:.2f}\n')
-analysis.write(f'Average Change: {avg_change:.2f}\n')
-analysis.write(f'Greatest Increase in Profits: {max_month} {max_profit:.2f}\n')
-analysis.write(f'Greatest Decrease in Profits: {min_month} {min_profit:.2f}\n')
+analysis.write(financial_analysis)
 
 analysis.close()
